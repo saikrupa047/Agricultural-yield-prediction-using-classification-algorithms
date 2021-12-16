@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Crop Yield Prediction</title>
+
+    <link rel="stylesheet" href="/static/style.css" />
+
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome JS -->
+    <script
+      src="https://kit.fontawesome.com/728d1d3dec.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Popper.JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="svgs">
+      <img src="/static/bg_svg.svg" />
+    </div>
+    <div class="page" id="part1">
+      <div class="info">
+        <div class="heading">
+          <div class="title text-primary">Crop Yield Prediction</div>
+          <div class="title-support">using Machine Learning</div>
+        </div>
+        <div class="dev">
+          <div class="text-primary">
+            <i class="far fa-file-code"></i>&nbsp;Developed by:
+          </div>
+          <ul>
+            <li>Atla Smitha</li>
+            <li>Kodipaka Saikrupa</li>
+            <li>Rao Shravani</li>
+			&nbsp;
+			&nbsp;
+			<p>-Under the guidance of</p>
+			<p><b>Dr.T.V.Rajinikanth,Professor,Dean R &#38 D ,SNIST</b></p>
+          </ul>
+        </div>
+        <div class="btn-grp">
+          <a href="#part3" class="try"> Try it! </a>
+        </div>
+      </div>
+      <div class="imgContainer">
+        <!-- <img src="imgs/farm1.jpg" alt=""> -->
+        <img src="/static/flowers.svg" alt="" />
+      </div>
+      <div class="scrollIndicator"></div>
+    </div>
+
+    <div class="container p-5 page" id="part3">
+      <div class="imgContainer">
+        <img src="/static/plant.svg" alt="" />
+      </div>
+      <div class="card shadow-lg col-6 p-0 mx-auto">
+        <div class="card-header text-primary text-center">
+          <h3><u>Crop Yield Predictor</u></h3>
+        </div>
+        <div class="card-body">
+          <form action="/login" method="post">
+            <div class="form-group">
+              <label for="state">State:</label>
+              <select class="form-control" name="state" id="state">
+                <option selected value="0">Select State</option>
+                <option value="Washington">Washington</option>
+                <option value="Oklahoma">Oklahoma</option>
+                <option value="Kansas">Kansas</option>
+                <option value="Texas">Texas</option>
+                <option value="Montana">Montana</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="county">County:</label>
+              <select class="form-control" name="county" id="county">
+                <option selected value="0">Select County</option>
+                <option value="Adams">Adams</option>
+                <option value="Alfalfa">Alfalfa</option>
+                <option value="Anderson">Anderson</option>
+                <option value="Archer">Archer</option>
+                <option value="Armstrong">Armstrong</option>
+                <option value="Atascosa">Atascosa</option>
+                <option value="Atchison">Atchison</option>
+                <option value="Bailey">Bailey</option>
+                <option value="Barton">Barton</option>
+                <option value="Beaver">Beaver</option>
+                <option value="Beckham">Beckham</option>
+                <option value="Bell">Bell</option>
+                <option value="Bexar">Bexar</option>
+                <option value="Big Horn">Big Horn</option>
+                <option value="Blaine">Blaine</option>
+                <option value="Bosque">Bosque</option>
+                <option value="Bourbon">Bourbon</option>
+                <option value="Bowie">Bowie</option>
+                <option value="Briscoe">Briscoe</option>
+                <option value="Broadwater">Broadwater</option>
+                <option value="Brown">Brown</option>
+                <option value="Bryan">Bryan</option>
+                <option value="Butler">Butler</option>
+                <option value="Caddo">Caddo</option>
+                <option value="Callahan">Callahan</option>
+                <option value="Canadian">Canadian</option>
+                <option value="Carbon">Carbon</option>
+                <option value="Carson">Carson</option>
+                <option value="Carter">Carter</option>
+                <option value="Cascade">Cascade</option>
+                <option value="Castro">Castro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cloudcover">Cloudcover(0-1):</label>
+              <input
+                type="number"
+                class="form-control"
+                id="cloudcover"
+                placeholder="Enter cloudcover"
+              />
+            </div>
+            <div class="form-group">
+              <label for="duepoint">Duepoint:</label>
+              <input
+                type="number"
+                class="form-control"
+                id="duepoint"
+                placeholder="Enter duepoint"
+              />
+            </div>
+            <div class="form-group">
+              <label for="humidity">Humidity(0-1):</label>
+              <input
+                type="number"
+                class="form-control"
+                id="humidity"
+                placeholder="Enter humidity"
+              />
+            </div>
+            <div class="form-group">
+              <label for="pressure">Pressure(bar):</label>
+              <input
+                type="number"
+                class="form-control"
+                id="pressure"
+                placeholder="Enter pressure"
+              />
+            </div>
+            <div class="form-group">
+              <label for="tempmin">Tempmin(in celcius):</label>
+              <input
+                type="number"
+                class="form-control"
+                id="tempmin"
+                placeholder="Enter tempmin"
+              />
+            </div>
+            <div class="form-group">
+              <label for="tempmax">Tempmax(in celcius):</label>
+              <input
+                type="number"
+                class="form-control"
+                id="tempmax"
+                placeholder="Enter tempmax"
+              />
+            </div>
+            <div class="form-group">
+              <label for="windspeed">Windspeed(kmph):</label>
+              <input
+                type="number"
+                class="form-control"
+                id="windspeed"
+                placeholder="Enter windspeed"
+              />
+            </div>
+            <div class="row">
+              <input
+                class="btn btn-primary mx-auto"
+                type="submit"
+                value="Submit"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="card-footer" id="prediction"></div>
+      </div>
+    </div>
+  </body>
+</html>
